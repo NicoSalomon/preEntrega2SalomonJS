@@ -1,3 +1,5 @@
+alert("¡ Bienvenido/a !\nPor el momento solo disponemos de algunas minutas")
+
 var pedidos = []
 
 function realizarPedido() {
@@ -16,9 +18,11 @@ function realizarPedido() {
     return
   }
 
-  var seleccionAcompanamiento = prompt(
-    "Seleccione su acompañamiento:\n" + acompanamiento.join(", ")
-  )
+  var seleccionAcompanamiento = prompt("Seleccione su acompañamiento:\n" + acompanamiento.join(", ")).toLocaleLowerCase()
+
+  while (seleccionAcompanamiento != "pure" && seleccionAcompanamiento != "papas fritas") {
+    seleccionAcompanamiento = prompt("No disponemos de " + seleccionAcompanamiento + ", o no es una respuesta correcta, por favor, seleccione su acompañamiento:\n" + acompanamiento.join(", "))
+  }
 
   if (seleccionAcompanamiento) {
     var numeroPedido = generarNumeroPedido()
@@ -51,7 +55,7 @@ function buscarPedido() {
 }
 
 function eliminarPedido() {
-  var numeroEliminar = prompt("Ingrese el número de pedido a eliminar:");
+  var numeroEliminar = prompt("Ingrese el número de pedido a eliminar:")
 
   if (numeroEliminar) {
     var confirmacion = confirm("¿Está seguro de que desea eliminar el pedido?")
@@ -88,13 +92,15 @@ function obtenerAcompanamiento(tipoComida) {
   switch (tipoComida) {
     case "milanesa":
     case "matambre":
-      return ["Papas Fritas", "Puré"]
-
-    case "fideos":
-      return ["Bolognesa", "Filetto", "Salsa Blanca"]
+    case "hamburguesa":
+    case "carne al horno":
+    case "churrasco":
+    case "sanguche de milanesa":
+    case "pollo":
+      return ["Papas Fritas", "Pure"];
 
     default:
-      return []
+      return [];
   }
 }
 
