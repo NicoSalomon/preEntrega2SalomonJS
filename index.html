@@ -16,19 +16,20 @@
   <div id="caja_principal">
     <h2>Seleccione su comida:</h2>
     <select id="tipoComida" class="form-select" aria-label="Default select example">
-      <option selected value="milanesa">Milanesa</option>
-      <option value="matambre">Matambre</option>
-      <option value="hamburguesa">Hamburguesa</option>
-      <option value="carne al horno">Carne al horno</option>
-      <option value="churrasco">Churrasco</option>
-      <option value="sanguche de milanesa">Sanguche de milanesa</option>
-      <option value="pollo">Pollo</option>
+      <option selected value="milanesa">Milanesa - $100</option>
+      <option value="matambre">Matambre - $100</option>
+      <option value="hamburguesa">Hamburguesa - $100</option>
+      <option value="carne al horno">Carne al horno - $100</option>
+      <option value="churrasco">Churrasco - $100</option>
+      <option value="sanguche de milanesa">Sanguche de milanesa - $100</option>
+      <option value="pollo">Pollo - $100</option>
     </select>
 
     <div class="d-grid gap-2 col-6 mx-auto">
       <button class="btn btn-light" type="button" onclick="realizarPedido()">Realizar Pedido</button>
       <button class="btn btn-light" type="button" onclick="buscarPedido()">Buscar Pedido</button>
       <button class="btn btn-light" type="button" onclick="eliminarPedido()">Eliminar Pedido</button>
+      <button class="btn btn-light" type="button" onclick="mostrarSumaPreciosPorUsuario()">Resumen por nombre</button>
     </div>
   </div>
 </body>
